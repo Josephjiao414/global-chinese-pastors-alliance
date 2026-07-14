@@ -4,30 +4,31 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { siteContentZhHant } from "@/content/site.zh-Hant";
 import {
-  displayEventField,
-  eventStatusLabels,
-  eventsZhCN,
-  getEventBySlug,
-} from "@/content/events.zh-CN";
+  displayEventFieldZhHant,
+  eventStatusLabelsZhHant,
+  eventsZhHant,
+  getEventBySlugZhHant,
+} from "@/content/events.zh-Hant";
 
 type EventDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  return eventsZhCN.map((event) => ({ slug: event.slug }));
+  return eventsZhHant.map((event) => ({ slug: event.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: EventDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const event = getEventBySlug(slug);
+  const event = getEventBySlugZhHant(slug);
 
   if (!event) {
     return {
-      title: "聚会活动",
+      title: "聚會活動",
     };
   }
 
@@ -39,39 +40,41 @@ export async function generateMetadata({
 
 export default async function EventDetailPage({ params }: EventDetailPageProps) {
   const { slug } = await params;
-  const event = getEventBySlug(slug);
+  const event = getEventBySlugZhHant(slug);
 
   if (!event) {
     notFound();
   }
 
   const details = [
-    ["活动日期", event.date],
-    ["开始时间", event.startTime],
-    ["时区", event.timezone],
-    ["主讲人", displayEventField(event.speaker)],
-    ["会议平台", displayEventField(event.platform)],
-    ["会议号码", displayEventField(event.meetingNumber)],
-    ["会议密码", displayEventField(event.meetingPassword)],
+    ["活動日期", event.date],
+    ["開始時間", event.startTime],
+    ["時區", event.timezone],
+    ["主講人", displayEventFieldZhHant(event.speaker)],
+    ["會議平台", displayEventFieldZhHant(event.platform)],
+    ["會議號碼", displayEventFieldZhHant(event.meetingNumber)],
+    ["會議密碼", displayEventFieldZhHant(event.meetingPassword)],
   ];
 
   return (
     <>
       <SiteHeader
+        content={siteContentZhHant}
         languageLinks={{
           simplified: `/events/${event.slug}`,
           traditional: `/zh-Hant/events/${event.slug}`,
         }}
+        locale="zh-Hant"
       />
       <main>
         <section className="bg-[#EAF2F8] py-16 md:py-24">
           <div className="container grid gap-10 md:grid-cols-[1.08fr_0.92fr] md:items-center">
             <div>
-              <Link className="text-sm font-semibold text-[#B88A3B]" href="/events">
-                返回聚会活动
+              <Link className="text-sm font-semibold text-[#B88A3B]" href="/zh-Hant/events">
+                返回聚會活動
               </Link>
               <p className="mt-8 text-sm font-semibold text-[#B88A3B]">
-                {eventStatusLabels[event.status]}
+                {eventStatusLabelsZhHant[event.status]}
               </p>
               <h1 className="serif-title mt-4 text-5xl font-semibold leading-tight text-[#0B2340] md:text-6xl">
                 {event.title}
@@ -85,7 +88,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
             </div>
             <div className="soft-card overflow-hidden p-3">
               <Image
-                alt={`${event.title}活动海报`}
+                alt={`${event.title}活動海報`}
                 className="h-auto w-full rounded-md"
                 height={1536}
                 priority
@@ -101,7 +104,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
             <div>
               <div className="gold-line mb-5" />
               <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
-                活动信息
+                活動資訊
               </h2>
             </div>
             <div className="soft-card p-6 md:p-8">
@@ -122,18 +125,18 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                   rel="noreferrer"
                   target="_blank"
                 >
-                  报名参加
+                  報名參加
                 </a>
               ) : (
                 <p className="mt-8 text-sm leading-7 text-[#0B2340]/64">
-                  报名或参会方式确认后会在本页更新。你也可以通过“联系我们”留下信息，方便后续通知。
+                  報名或參會方式確認後會在本頁更新。你也可以透過「聯絡我們」留下資訊，方便後續通知。
                 </p>
               )}
             </div>
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter content={siteContentZhHant} />
     </>
   );
 }

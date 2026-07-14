@@ -1,15 +1,37 @@
 import Link from "next/link";
 import { siteContentZhCN } from "@/content/site.zh-CN";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  content?: {
+    siteName: string;
+    navigation: readonly { label: string; href: string }[];
+  };
+  locale?: "zh-CN" | "zh-Hant";
+  languageLinks?: {
+    simplified: string;
+    traditional: string;
+  };
+};
+
+export function SiteHeader({
+  content = siteContentZhCN,
+  locale = "zh-CN",
+  languageLinks = {
+    simplified: "/",
+    traditional: "/zh-Hant",
+  },
+}: SiteHeaderProps) {
+  const isTraditional = locale === "zh-Hant";
+  const homeHref = isTraditional ? "/zh-Hant" : "/";
+
   return (
     <header className="border-b border-[rgba(18,52,90,0.1)] bg-[#FAFBFC]/92 backdrop-blur">
       <div className="container flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-3 py-3">
-        <Link className="serif-title text-lg font-semibold text-[#12345A]" href="/">
-          {siteContentZhCN.siteName}
+        <Link className="serif-title text-lg font-semibold text-[#12345A]" href={homeHref}>
+          {content.siteName}
         </Link>
-        <nav aria-label="主导航" className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-8">
-          {siteContentZhCN.navigation.map((item) => (
+        <nav aria-label={isTraditional ? "主導覽" : "主导航"} className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-8">
+          {content.navigation.map((item) => (
             <Link
               className="text-sm font-medium text-[#0B2340]/78 transition-colors hover:text-[#12345A]"
               href={item.href}
@@ -18,6 +40,21 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <span className="hidden h-4 w-px bg-[#12345A]/18 sm:inline-block" aria-hidden="true" />
+          <Link
+            className={!isTraditional ? "text-sm font-semibold text-[#12345A]" : "text-sm font-medium text-[#0B2340]/58 transition-colors hover:text-[#12345A]"}
+            href={languageLinks.simplified}
+            hrefLang="zh-CN"
+          >
+            简体
+          </Link>
+          <Link
+            className={isTraditional ? "text-sm font-semibold text-[#12345A]" : "text-sm font-medium text-[#0B2340]/58 transition-colors hover:text-[#12345A]"}
+            href={languageLinks.traditional}
+            hrefLang="zh-Hant"
+          >
+            繁體
+          </Link>
         </nav>
       </div>
     </header>

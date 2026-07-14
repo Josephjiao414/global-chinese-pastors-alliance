@@ -2,25 +2,29 @@ import Link from "next/link";
 import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { siteContentZhCN } from "@/content/site.zh-CN";
+import { siteContentZhHant } from "@/content/site.zh-Hant";
 import {
-  displayEventField,
-  eventStatusLabels,
-  getUpcomingEvent,
-} from "@/content/events.zh-CN";
+  displayEventFieldZhHant,
+  eventStatusLabelsZhHant,
+  getUpcomingEventZhHant,
+} from "@/content/events.zh-Hant";
 
 export const metadata = {
-  title: "全球华人教牧同工联盟",
+  title: "全球華人教牧同工聯盟",
   description:
-    "全球华人教牧同工联盟面向华人牧者、传道人与教会同工，发布聚会信息、会后交流入口与后续资源整理。",
+    "全球華人教牧同工聯盟面向華人牧者、傳道人與教會同工，發布聚會資訊、會後交流入口與後續資源整理。",
 };
 
 export default function HomePage() {
-  const event = getUpcomingEvent();
+  const event = getUpcomingEventZhHant();
 
   return (
     <>
-      <SiteHeader languageLinks={{ simplified: "/", traditional: "/zh-Hant" }} />
+      <SiteHeader
+        content={siteContentZhHant}
+        languageLinks={{ simplified: "/", traditional: "/zh-Hant" }}
+        locale="zh-Hant"
+      />
       <main>
         <section className="relative overflow-hidden py-20 md:py-28">
           <div className="absolute inset-x-0 bottom-0 h-[380px] bg-[radial-gradient(circle_at_center,rgba(216,188,130,0.22),transparent_24%),linear-gradient(to_top,rgba(234,242,248,0.96),rgba(234,242,248,0.34)_58%,transparent)]" />
@@ -43,24 +47,24 @@ export default function HomePage() {
           </div>
           <div className="container relative text-center">
             <p className="mb-6 text-sm font-semibold tracking-[0.18em] text-[#B88A3B]">
-              {siteContentZhCN.hero.name}
+              {siteContentZhHant.hero.name}
             </p>
             <h1 className="serif-title mx-auto max-w-5xl text-5xl font-semibold leading-tight text-[#0B2340] md:text-6xl">
-              <span className="block">面对时代挑战，</span>
-              <span className="mt-2 block">教会如何复兴</span>
+              <span className="block">面對時代挑戰，</span>
+              <span className="mt-2 block">教會如何復興</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-9 text-[#0B2340]/72">
-              {siteContentZhCN.hero.subtitle}
+              {siteContentZhHant.hero.subtitle}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link className="button button-primary" href="/about">
-                {siteContentZhCN.hero.primaryAction}
+              <Link className="button button-primary" href="/zh-Hant/about">
+                {siteContentZhHant.hero.primaryAction}
               </Link>
               <Link
                 className="button button-secondary"
-                href={event ? `/events/${event.slug}` : "/events"}
+                href={event ? `/zh-Hant/events/${event.slug}` : "/zh-Hant/events"}
               >
-                {siteContentZhCN.hero.secondaryAction}
+                {siteContentZhHant.hero.secondaryAction}
               </Link>
             </div>
           </div>
@@ -71,15 +75,15 @@ export default function HomePage() {
             <div>
               <div className="gold-line mb-5" />
               <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
-                {siteContentZhCN.about.title}
+                {siteContentZhHant.about.title}
               </h2>
             </div>
             <div className="space-y-5 text-base leading-8 text-[#0B2340]/72">
-              {siteContentZhCN.about.body.map((paragraph) => (
+              {siteContentZhHant.about.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {["聚会信息", "会后交流", "资源整理"].map((item) => (
+                {["聚會資訊", "會後交流", "資源整理"].map((item) => (
                   <div
                     className="border-l border-[#B88A3B]/40 pl-4 text-sm font-semibold text-[#0B2340]"
                     key={item}
@@ -97,17 +101,17 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <div className="gold-line mb-5" />
               <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
-                {siteContentZhCN.events.title}
+                {siteContentZhHant.events.title}
               </h2>
               <p className="mt-5 leading-8 text-[#0B2340]/72">
-                {siteContentZhCN.events.intro}
+                {siteContentZhHant.events.intro}
               </p>
             </div>
             {event ? (
               <article className="soft-card mt-10 grid gap-8 p-6 md:grid-cols-[1fr_auto] md:p-8">
                 <div>
                   <span className="text-sm font-semibold text-[#B88A3B]">
-                    {eventStatusLabels[event.status]}
+                    {eventStatusLabelsZhHant[event.status]}
                   </span>
                   <h3 className="serif-title mt-3 text-3xl font-semibold text-[#0B2340]">
                     {event.title}
@@ -120,39 +124,39 @@ export default function HomePage() {
                 <div className="min-w-64 border-t border-[#12345A]/12 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
                   <dl className="space-y-4 text-sm">
                     <div>
-                      <dt className="text-[#0B2340]/52">时间</dt>
+                      <dt className="text-[#0B2340]/52">時間</dt>
                       <dd className="mt-1 font-semibold text-[#0B2340]">
                         {event.date} {event.startTime}
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[#0B2340]/52">时区</dt>
+                      <dt className="text-[#0B2340]/52">時區</dt>
                       <dd className="mt-1 font-semibold text-[#0B2340]">
                         {event.timezone}
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[#0B2340]/52">会议号码</dt>
+                      <dt className="text-[#0B2340]/52">會議號碼</dt>
                       <dd className="mt-1 font-semibold text-[#0B2340]">
-                        {displayEventField(event.meetingNumber)}
+                        {displayEventFieldZhHant(event.meetingNumber)}
                       </dd>
                     </div>
                   </dl>
                   <Link
                     className="button button-primary mt-7 w-full"
-                    href={`/events/${event.slug}`}
+                    href={`/zh-Hant/events/${event.slug}`}
                   >
-                    {siteContentZhCN.events.action}
+                    {siteContentZhHant.events.action}
                   </Link>
                 </div>
               </article>
             ) : (
               <div className="soft-card mt-10 p-6 md:p-8">
                 <h3 className="serif-title text-2xl font-semibold text-[#0B2340]">
-                  近期聚会稍后公布
+                  近期聚會確認後公布
                 </h3>
                 <p className="mt-4 leading-8 text-[#0B2340]/68">
-                  联盟正在预备后续聚会信息，确认后会在这里更新。
+                  聯盟正在預備後續聚會資訊，確認後會在這裡更新。
                 </p>
               </div>
             )}
@@ -164,27 +168,27 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <div className="gold-line mb-5" />
               <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
-                {siteContentZhCN.afterGathering.title}
+                {siteContentZhHant.afterGathering.title}
               </h2>
               <p className="mt-5 text-lg leading-9 text-[#0B2340]/72">
-                {siteContentZhCN.afterGathering.intro}
+                {siteContentZhHant.afterGathering.intro}
               </p>
               <p className="mt-4 text-sm leading-7 text-[#0B2340]/58">
-                我们会谨慎使用所提交的信息，仅用于聚会后的联系、交流与后续通知。
+                我們會謹慎使用所提交的資訊，僅用於聚會後的聯絡、交流與後續通知。
               </p>
               <a
                 className="button button-primary mt-8"
-                href={siteContentZhCN.afterGathering.formUrl}
+                href={siteContentZhHant.afterGathering.formUrl}
                 rel="noreferrer"
                 target="_blank"
               >
-                {siteContentZhCN.afterGathering.action}
+                {siteContentZhHant.afterGathering.action}
               </a>
             </div>
             <div className="soft-card mx-auto w-full max-w-[360px] p-6 text-center">
               <div className="mx-auto w-full max-w-[240px] rounded-md border border-[#12345A]/10 bg-[#FAFBFC] p-3">
                 <Image
-                  alt="会后交流登记表二维码"
+                  alt="會後交流登記表二維碼"
                   className="h-auto w-full"
                   height={320}
                   src="/qr-contact.svg"
@@ -192,16 +196,16 @@ export default function HomePage() {
                 />
               </div>
               <p className="mt-5 text-base font-semibold text-[#0B2340]">
-                {siteContentZhCN.afterGathering.qrLabel}
+                {siteContentZhHant.afterGathering.qrLabel}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#0B2340]/58">
-                {siteContentZhCN.afterGathering.qrHelp}
+                {siteContentZhHant.afterGathering.qrHelp}
               </p>
             </div>
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter content={siteContentZhHant} />
     </>
   );
 }

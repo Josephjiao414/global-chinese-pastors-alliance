@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: {
       "zh-CN": "/",
+      "zh-Hant": "/zh-Hant",
     },
   },
   openGraph: {
@@ -67,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html data-scroll-behavior="smooth" lang="zh-CN" suppressHydrationWarning>
+    <html data-scroll-behavior="smooth" lang="zh" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );
