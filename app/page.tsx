@@ -12,7 +12,7 @@ import {
 export const metadata = {
   title: "全球华人教牧同工联盟",
   description:
-    "全球华人教牧同工联盟连接华人牧者、传道人和教会同工，一同守望、装备、同行，回应时代挑战。",
+    "全球华人教牧同工联盟面向华人牧者、传道人与教会同工，发布聚会信息、会后交流入口与后续资源整理。",
 };
 
 export default function HomePage() {
