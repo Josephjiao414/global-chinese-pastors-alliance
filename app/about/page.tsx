@@ -51,6 +51,27 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <section className="py-16 md:py-20">
+          <div className="container">
+            <div className="gold-line mb-5" />
+            <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
+              {siteContentZhCN.mission.directionsTitle}
+            </h2>
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {siteContentZhCN.mission.items.map((item) => (
+                <article className="soft-card p-6" key={item.title}>
+                  <h3 className="serif-title text-2xl font-semibold text-[#0B2340]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 leading-8 text-[#0B2340]/68">
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </>

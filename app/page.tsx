@@ -78,6 +78,16 @@ export default function HomePage() {
               {siteContentZhCN.about.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                {["聚会信息", "会后交流", "资源整理"].map((item) => (
+                  <div
+                    className="border-l border-[#B88A3B]/40 pl-4 text-sm font-semibold text-[#0B2340]"
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -158,6 +168,9 @@ export default function HomePage() {
               </h2>
               <p className="mt-5 text-lg leading-9 text-[#0B2340]/72">
                 {siteContentZhCN.afterGathering.intro}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-[#0B2340]/58">
+                我们会谨慎使用所提交的信息，仅用于聚会后的联系、交流与后续通知。
               </p>
               <a
                 className="button button-primary mt-8"

@@ -21,8 +21,21 @@ export default function ContactPage() {
           {siteContentZhCN.contact.intro}
         </p>
         <div className="soft-card mt-10 max-w-2xl p-6 md:p-8">
-          <p className="text-sm text-[#0B2340]/58">联系方式</p>
-          <p className="mt-3 text-lg font-semibold text-[#0B2340]">稍后公布</p>
+          <p className="text-sm text-[#0B2340]/58">当前联系入口</p>
+          <h2 className="serif-title mt-3 text-2xl font-semibold text-[#0B2340]">
+            会后交流表
+          </h2>
+          <p className="mt-4 leading-8 text-[#0B2340]/68">
+            请留下姓名、联系方式与简短说明，方便同工在聚会后按实际需要联系。正式邮箱或其他公开联系方式确认后，会在本页补充。
+          </p>
+          <a
+            className="button button-primary mt-6"
+            href={siteContentZhCN.afterGathering.formUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {siteContentZhCN.contact.action}
+          </a>
         </div>
       </main>
       <SiteFooter />

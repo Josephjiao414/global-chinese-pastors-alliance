@@ -121,7 +121,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                 </a>
               ) : (
                 <p className="mt-8 text-sm leading-7 text-[#0B2340]/64">
-                  报名链接稍后公布。你也可以通过“联系我们”获取后续聚会信息。
+                  报名或参会方式确认后会在本页更新。你也可以通过“联系我们”留下信息，方便后续通知。
                 </p>
               )}
             </div>

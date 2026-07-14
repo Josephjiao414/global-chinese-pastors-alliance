@@ -20,7 +20,7 @@ export default function EventsPage() {
             聚会活动
           </h1>
           <p className="mt-6 max-w-2xl leading-8 text-[#0B2340]/72">
-            这里整理联盟近期聚会与活动信息。后续新增活动时，只需更新活动数据文件，页面会自动读取并展示。
+            这里发布已经确认的线上聚会与同工交流安排。若部分会议资料仍在预备中，我们会在确认后及时更新。
           </p>
           <div className="mt-12 grid gap-6">
             {eventsZhCN.length > 0 ? (
@@ -65,7 +65,7 @@ export default function EventsPage() {
                   暂无公开聚会
                 </h2>
                 <p className="mt-4 leading-8 text-[#0B2340]/68">
-                  新的聚会安排确认后，会在本页更新。
+                  新的聚会安排确认后，会在本页更新。你也可以通过会后交流表留下联系方式，方便后续通知。
                 </p>
               </div>
             )}

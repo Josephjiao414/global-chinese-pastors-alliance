@@ -52,5 +52,5 @@ export function getEventBySlug(slug: string) {
 }
 
 export function displayEventField(value: string) {
-  return value.trim() ? value : "稍后公布";
+  return value.trim() ? value : "确认后公布";
 }
