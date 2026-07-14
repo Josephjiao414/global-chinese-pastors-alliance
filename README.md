@@ -49,7 +49,7 @@ pnpm start
 NEXT_PUBLIC_SITE_URL=https://你的正式域名
 ```
 
-该变量用于生成 sitemap、robots 和社交分享 metadata 的绝对地址。未设置时，本地开发会 fallback 到 `http://localhost:3000`。
+该变量用于生成 sitemap、robots 和社交分享 metadata 的绝对地址。未设置时，会 fallback 到当前 Render 正式地址。
 
 ## Render 部署建议
 
