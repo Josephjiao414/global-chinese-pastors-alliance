@@ -34,6 +34,13 @@ export async function generateMetadata({
   return {
     title: event.title,
     description: event.subtitle,
+    alternates: {
+      canonical: `/events/${event.slug}`,
+      languages: {
+        "zh-CN": `/events/${event.slug}`,
+        "zh-Hant": `/zh-Hant/events/${event.slug}`,
+      },
+    },
   };
 }
 

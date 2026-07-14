@@ -6,6 +6,13 @@ import { siteContentZhCN } from "@/content/site.zh-CN";
 export const metadata: Metadata = {
   title: "联系我们",
   description: "联系全球华人教牧同工联盟，了解聚会与同工连接信息。",
+  alternates: {
+    canonical: "/contact",
+    languages: {
+      "zh-CN": "/contact",
+      "zh-Hant": "/zh-Hant/contact",
+    },
+  },
 };
 
 export default function ContactPage() {

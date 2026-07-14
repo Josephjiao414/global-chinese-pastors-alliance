@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -9,10 +10,17 @@ import {
   getUpcomingEventZhHant,
 } from "@/content/events.zh-Hant";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "全球華人教牧同工聯盟",
   description:
     "全球華人教牧同工聯盟面向華人牧者、傳道人與教會同工，發布聚會資訊、會後交流入口與後續資源整理。",
+  alternates: {
+    canonical: "/zh-Hant",
+    languages: {
+      "zh-CN": "/",
+      "zh-Hant": "/zh-Hant",
+    },
+  },
 };
 
 export default function HomePage() {

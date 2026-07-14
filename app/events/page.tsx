@@ -7,6 +7,13 @@ import { displayEventField, eventsZhCN, eventStatusLabels } from "@/content/even
 export const metadata: Metadata = {
   title: "聚会活动",
   description: "查看全球华人教牧同工联盟近期聚会与活动信息。",
+  alternates: {
+    canonical: "/events",
+    languages: {
+      "zh-CN": "/events",
+      "zh-Hant": "/zh-Hant/events",
+    },
+  },
 };
 
 export default function EventsPage() {

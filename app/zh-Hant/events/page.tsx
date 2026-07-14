@@ -8,6 +8,13 @@ import { displayEventFieldZhHant, eventsZhHant, eventStatusLabelsZhHant } from "
 export const metadata: Metadata = {
   title: "聚會活動",
   description: "查看全球華人教牧同工聯盟近期聚會與活動資訊。",
+  alternates: {
+    canonical: "/zh-Hant/events",
+    languages: {
+      "zh-CN": "/events",
+      "zh-Hant": "/zh-Hant/events",
+    },
+  },
 };
 
 export default function EventsPage() {

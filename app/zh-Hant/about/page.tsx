@@ -6,6 +6,13 @@ import { siteContentZhHant } from "@/content/site.zh-Hant";
 export const metadata: Metadata = {
   title: "關於聯盟",
   description: "了解全球華人教牧同工聯盟的異象、使命與核心服事方向。",
+  alternates: {
+    canonical: "/zh-Hant/about",
+    languages: {
+      "zh-CN": "/about",
+      "zh-Hant": "/zh-Hant/about",
+    },
+  },
 };
 
 export default function AboutPage() {

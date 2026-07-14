@@ -6,6 +6,13 @@ import { siteContentZhHant } from "@/content/site.zh-Hant";
 export const metadata: Metadata = {
   title: "聯絡我們",
   description: "聯絡全球華人教牧同工聯盟，了解聚會與同工連結資訊。",
+  alternates: {
+    canonical: "/zh-Hant/contact",
+    languages: {
+      "zh-CN": "/contact",
+      "zh-Hant": "/zh-Hant/contact",
+    },
+  },
 };
 
 export default function ContactPage() {
