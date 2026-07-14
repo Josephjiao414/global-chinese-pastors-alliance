@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="全球华人教牧同工联盟">
+  <rect width="1200" height="630" fill="#FAFBFC"/>
+  <rect y="0" width="1200" height="630" fill="url(#mist)"/>
+  <path d="M150 520c130-170 770-170 900 0" fill="none" stroke="#12345A" stroke-width="2" opacity=".16"/>
+  <path d="M245 495c115-120 595-120 710 0" fill="none" stroke="#12345A" stroke-width="2" opacity=".1"/>
+  <path d="M600 252v170" stroke="#D8BC82" stroke-width="9" stroke-linecap="round" opacity=".8"/>
+  <path d="M548 320h104" stroke="#D8BC82" stroke-width="9" stroke-linecap="round" opacity=".8"/>
+  <g opacity=".18" fill="#12345A">
+    <rect x="244" y="430" width="40" height="70"/>
+    <rect x="316" y="390" width="34" height="110"/>
+    <rect x="382" y="415" width="54" height="85"/>
+    <rect x="778" y="410" width="42" height="90"/>
+    <rect x="854" y="386" width="32" height="114"/>
+    <rect x="920" y="428" width="52" height="72"/>
+  </g>
+  <text x="600" y="154" text-anchor="middle" font-family="Songti SC, STSong, SimSun, serif" font-size="34" font-weight="600" fill="#B88A3B" letter-spacing="7">全球华人教牧同工联盟</text>
+  <text x="600" y="268" text-anchor="middle" font-family="Songti SC, STSong, SimSun, serif" font-size="70" font-weight="600" fill="#0B2340">面对时代挑战</text>
+  <text x="600" y="356" text-anchor="middle" font-family="Songti SC, STSong, SimSun, serif" font-size="70" font-weight="600" fill="#0B2340">教会如何复兴</text>
+  <text x="600" y="438" text-anchor="middle" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="25" fill="#12345A" opacity=".78">同心合一 · 寻求主面 · 复兴教会 · 影响世界</text>
+  <defs>
+    <radialGradient id="mist" cx="50%" cy="58%" r="58%">
+      <stop offset="0%" stop-color="#EAF2F8"/>
+      <stop offset="52%" stop-color="#FAFBFC"/>
+      <stop offset="100%" stop-color="#FAFBFC"/>
+    </radialGradient>
+  </defs>
+</svg>
