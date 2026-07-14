@@ -61,6 +61,15 @@ export const siteContentZhCN = {
       "本次聚会聚焦当代教会处境，邀请同工一同思想教会如何在真理中站立，在祷告中更新，并在彼此连接中重新得力。",
     action: "查看聚会信息",
   },
+  afterGathering: {
+    title: "会后交流",
+    intro:
+      "聚会结束后，欢迎留下联系方式与交流需要，方便同工后续联系、守望与同行。",
+    qrLabel: "手机扫码填写",
+    qrHelp: "也可以直接点击按钮打开登记表。",
+    formUrl: "https://qr-contact-form.onrender.com",
+    action: "打开登记表",
+  },
   contact: {
     title: "联系我们",
     intro:

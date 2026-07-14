@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { siteContentZhCN } from "@/content/site.zh-CN";
@@ -145,6 +146,45 @@ export default function HomePage() {
                 </p>
               </div>
             )}
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container grid gap-10 md:grid-cols-[1fr_360px] md:items-center">
+            <div className="max-w-3xl">
+              <div className="gold-line mb-5" />
+              <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
+                {siteContentZhCN.afterGathering.title}
+              </h2>
+              <p className="mt-5 text-lg leading-9 text-[#0B2340]/72">
+                {siteContentZhCN.afterGathering.intro}
+              </p>
+              <a
+                className="button button-primary mt-8"
+                href={siteContentZhCN.afterGathering.formUrl}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {siteContentZhCN.afterGathering.action}
+              </a>
+            </div>
+            <div className="soft-card mx-auto w-full max-w-[360px] p-6 text-center">
+              <div className="mx-auto w-full max-w-[240px] rounded-md border border-[#12345A]/10 bg-[#FAFBFC] p-3">
+                <Image
+                  alt="会后交流登记表二维码"
+                  className="h-auto w-full"
+                  height={320}
+                  src="/qr-contact.svg"
+                  width={320}
+                />
+              </div>
+              <p className="mt-5 text-base font-semibold text-[#0B2340]">
+                {siteContentZhCN.afterGathering.qrLabel}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#0B2340]/58">
+                {siteContentZhCN.afterGathering.qrHelp}
+              </p>
+            </div>
           </div>
         </section>
       </main>
