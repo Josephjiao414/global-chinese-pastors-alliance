@@ -44,6 +44,13 @@ export default function HomePage() {
           <div className="absolute bottom-[7.25rem] left-1/2 h-px w-16 -translate-x-1/2 bg-white/80 shadow-[0_0_42px_rgba(216,188,130,0.5)]" />
           <div
             aria-hidden="true"
+            className="absolute left-[8%] top-16 hidden h-28 w-20 opacity-20 md:block"
+          >
+            <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#B88A3B]" />
+            <div className="absolute left-1/2 top-9 h-px w-full -translate-x-1/2 bg-[#B88A3B]" />
+          </div>
+          <div
+            aria-hidden="true"
             className="absolute bottom-24 left-1/2 h-20 w-[760px] -translate-x-1/2 opacity-35"
           >
             <div className="absolute bottom-0 left-0 h-8 w-10 bg-[#12345A]/25" />
@@ -65,6 +72,9 @@ export default function HomePage() {
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-9 text-[#0B2340]/72">
               {siteContentZhHant.hero.subtitle}
+            </p>
+            <p className="mt-6 text-sm font-semibold tracking-[0.16em] text-[#12345A]/55">
+              {siteContentZhHant.hero.globalLine}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link className="button button-primary" href="/zh-Hant/about">
@@ -100,6 +110,35 @@ export default function HomePage() {
                   >
                     {item}
                   </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-20">
+          <div className="container">
+            <div className="soft-card relative overflow-hidden p-6 md:p-8">
+              <div
+                aria-hidden="true"
+                className="absolute -right-8 -top-10 h-36 w-24 opacity-10"
+              >
+                <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#12345A]" />
+                <div className="absolute left-1/2 top-12 h-px w-full -translate-x-1/2 bg-[#12345A]" />
+              </div>
+              <h2 className="serif-title text-3xl font-semibold text-[#0B2340]">
+                {siteContentZhHant.about.buildingTitle}
+              </h2>
+              <div className="mt-7 grid gap-5 md:grid-cols-3">
+                {siteContentZhHant.about.buildingItems.map((item) => (
+                  <article className="border-l border-[#B88A3B]/35 pl-5" key={item.title}>
+                    <h3 className="serif-title text-xl font-semibold text-[#12345A]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-[#0B2340]/66">
+                      {item.description}
+                    </p>
+                  </article>
                 ))}
               </div>
             </div>
@@ -176,7 +215,10 @@ export default function HomePage() {
         <section className="py-20">
           <div className="container grid gap-10 md:grid-cols-[1fr_360px] md:items-center">
             <div className="max-w-3xl">
-              <div className="gold-line mb-5" />
+              <div className="mb-5 flex items-center gap-3">
+                <div className="gold-line" />
+                <span aria-hidden="true" className="text-lg text-[#B88A3B]/70">✝</span>
+              </div>
               <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
                 {siteContentZhHant.afterGathering.title}
               </h2>

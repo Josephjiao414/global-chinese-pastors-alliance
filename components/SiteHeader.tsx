@@ -27,7 +27,17 @@ export function SiteHeader({
   return (
     <header className="border-b border-[rgba(18,52,90,0.1)] bg-[#FAFBFC]/92 backdrop-blur">
       <div className="container flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-3 py-3">
-        <Link className="serif-title text-lg font-semibold text-[#12345A]" href={homeHref}>
+        <Link
+          className="serif-title inline-flex items-center gap-3 text-lg font-semibold text-[#12345A]"
+          href={homeHref}
+        >
+          <span
+            aria-hidden="true"
+            className="relative inline-block h-6 w-6 rounded-full border border-[#B88A3B]/35"
+          >
+            <span className="absolute left-1/2 top-[4px] h-[16px] w-px -translate-x-1/2 bg-[#B88A3B]/70" />
+            <span className="absolute left-1/2 top-[9px] h-px w-[11px] -translate-x-1/2 bg-[#B88A3B]/70" />
+          </span>
           {content.siteName}
         </Link>
         <nav aria-label={isTraditional ? "主導覽" : "主导航"} className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-8">
