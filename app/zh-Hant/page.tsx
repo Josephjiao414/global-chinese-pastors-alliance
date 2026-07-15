@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { PosterHero } from "@/components/PosterHero";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { siteContentZhHant } from "@/content/site.zh-Hant";
@@ -36,60 +37,11 @@ export default function HomePage() {
         locale="zh-Hant"
       />
       <main>
-        <section className="relative overflow-hidden py-20 md:py-28">
-          <div className="absolute inset-x-0 bottom-0 h-[380px] bg-[radial-gradient(circle_at_center,rgba(216,188,130,0.22),transparent_24%),linear-gradient(to_top,rgba(234,242,248,0.96),rgba(234,242,248,0.34)_58%,transparent)]" />
-          <div className="absolute bottom-0 left-1/2 h-72 w-[980px] -translate-x-1/2 rounded-t-[100%] border border-[#12345A]/14" />
-          <div className="absolute bottom-8 left-1/2 h-48 w-[840px] -translate-x-1/2 rounded-t-[100%] border-t border-[#12345A]/10" />
-          <div className="absolute bottom-16 left-1/2 h-40 w-[7px] -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_70px_rgba(216,188,130,0.72),0_0_140px_rgba(255,255,255,0.88)]" />
-          <div className="absolute bottom-[8.75rem] left-1/2 h-[7px] w-28 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_70px_rgba(216,188,130,0.68),0_0_130px_rgba(255,255,255,0.82)]" />
-          <div className="absolute bottom-8 left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(216,188,130,0.24),rgba(255,255,255,0.2)_34%,transparent_68%)]" />
-          <div
-            aria-hidden="true"
-            className="absolute left-[8%] top-16 hidden h-32 w-24 opacity-28 md:block"
-          >
-            <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 rounded-full bg-[#B88A3B]" />
-            <div className="absolute left-1/2 top-10 h-[2px] w-full -translate-x-1/2 rounded-full bg-[#B88A3B]" />
-          </div>
-          <div
-            aria-hidden="true"
-            className="absolute bottom-24 left-1/2 h-20 w-[760px] -translate-x-1/2 opacity-35"
-          >
-            <div className="absolute bottom-0 left-0 h-8 w-10 bg-[#12345A]/25" />
-            <div className="absolute bottom-0 left-16 h-14 w-8 bg-[#12345A]/20" />
-            <div className="absolute bottom-0 left-28 h-11 w-12 bg-[#12345A]/20" />
-            <div className="absolute bottom-0 left-48 h-16 w-9 bg-[#12345A]/22" />
-            <div className="absolute bottom-0 right-48 h-12 w-10 bg-[#12345A]/20" />
-            <div className="absolute bottom-0 right-32 h-16 w-8 bg-[#12345A]/22" />
-            <div className="absolute bottom-0 right-16 h-10 w-12 bg-[#12345A]/20" />
-            <div className="absolute bottom-0 right-0 h-14 w-9 bg-[#12345A]/24" />
-          </div>
-          <div className="container relative text-center">
-            <p className="mb-6 text-sm font-semibold tracking-[0.18em] text-[#B88A3B]">
-              {siteContentZhHant.hero.name}
-            </p>
-            <h1 className="serif-title mx-auto max-w-5xl text-5xl font-semibold leading-tight text-[#0B2340] md:text-6xl">
-              <span className="block">面對時代挑戰，</span>
-              <span className="mt-2 block">教會如何復興</span>
-            </h1>
-            <p className="mx-auto mt-7 max-w-2xl text-lg leading-9 text-[#0B2340]/72">
-              {siteContentZhHant.hero.subtitle}
-            </p>
-            <p className="mt-6 text-sm font-semibold tracking-[0.16em] text-[#12345A]/55">
-              {siteContentZhHant.hero.globalLine}
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link className="button button-primary" href="/zh-Hant/about">
-                {siteContentZhHant.hero.primaryAction}
-              </Link>
-              <Link
-                className="button button-secondary"
-                href={event ? `/zh-Hant/events/${event.slug}` : "/zh-Hant/events"}
-              >
-                {siteContentZhHant.hero.secondaryAction}
-              </Link>
-            </div>
-          </div>
-        </section>
+        <PosterHero
+          content={siteContentZhHant}
+          eventHref={event ? `/zh-Hant/events/${event.slug}` : "/zh-Hant/events"}
+          titleLines={["面對時代挑戰", "教會如何復興"]}
+        />
 
         <section className="py-20">
           <div className="container grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start">
