@@ -40,14 +40,15 @@ export default function HomePage() {
           <div className="absolute inset-x-0 bottom-0 h-[380px] bg-[radial-gradient(circle_at_center,rgba(216,188,130,0.22),transparent_24%),linear-gradient(to_top,rgba(234,242,248,0.96),rgba(234,242,248,0.34)_58%,transparent)]" />
           <div className="absolute bottom-0 left-1/2 h-72 w-[980px] -translate-x-1/2 rounded-t-[100%] border border-[#12345A]/14" />
           <div className="absolute bottom-8 left-1/2 h-48 w-[840px] -translate-x-1/2 rounded-t-[100%] border-t border-[#12345A]/10" />
-          <div className="absolute bottom-20 left-1/2 h-20 w-px -translate-x-1/2 bg-white/80 shadow-[0_0_42px_rgba(216,188,130,0.55)]" />
-          <div className="absolute bottom-[7.25rem] left-1/2 h-px w-16 -translate-x-1/2 bg-white/80 shadow-[0_0_42px_rgba(216,188,130,0.5)]" />
+          <div className="absolute bottom-16 left-1/2 h-40 w-[7px] -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_70px_rgba(216,188,130,0.72),0_0_140px_rgba(255,255,255,0.88)]" />
+          <div className="absolute bottom-[8.75rem] left-1/2 h-[7px] w-28 -translate-x-1/2 rounded-full bg-white/90 shadow-[0_0_70px_rgba(216,188,130,0.68),0_0_130px_rgba(255,255,255,0.82)]" />
+          <div className="absolute bottom-8 left-1/2 h-60 w-60 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(216,188,130,0.24),rgba(255,255,255,0.2)_34%,transparent_68%)]" />
           <div
             aria-hidden="true"
-            className="absolute left-[8%] top-16 hidden h-28 w-20 opacity-20 md:block"
+            className="absolute left-[8%] top-16 hidden h-32 w-24 opacity-28 md:block"
           >
-            <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#B88A3B]" />
-            <div className="absolute left-1/2 top-9 h-px w-full -translate-x-1/2 bg-[#B88A3B]" />
+            <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 rounded-full bg-[#B88A3B]" />
+            <div className="absolute left-1/2 top-10 h-[2px] w-full -translate-x-1/2 rounded-full bg-[#B88A3B]" />
           </div>
           <div
             aria-hidden="true"
@@ -121,10 +122,10 @@ export default function HomePage() {
             <div className="soft-card relative overflow-hidden p-6 md:p-8">
               <div
                 aria-hidden="true"
-                className="absolute -right-8 -top-10 h-36 w-24 opacity-10"
+                className="absolute -right-6 -top-10 h-44 w-32 opacity-14"
               >
-                <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#12345A]" />
-                <div className="absolute left-1/2 top-12 h-px w-full -translate-x-1/2 bg-[#12345A]" />
+                <div className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 rounded-full bg-[#12345A]" />
+                <div className="absolute left-1/2 top-14 h-[3px] w-full -translate-x-1/2 rounded-full bg-[#12345A]" />
               </div>
               <h2 className="serif-title text-3xl font-semibold text-[#0B2340]">
                 {siteContentZhHant.about.buildingTitle}

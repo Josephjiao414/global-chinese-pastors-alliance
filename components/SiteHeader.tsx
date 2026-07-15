@@ -33,10 +33,10 @@ export function SiteHeader({
         >
           <span
             aria-hidden="true"
-            className="relative inline-block h-6 w-6 rounded-full border border-[#B88A3B]/35"
+            className="relative inline-block h-8 w-8 rounded-full border border-[#B88A3B]/50 bg-white/55 shadow-[0_0_22px_rgba(184,138,59,0.16)]"
           >
-            <span className="absolute left-1/2 top-[4px] h-[16px] w-px -translate-x-1/2 bg-[#B88A3B]/70" />
-            <span className="absolute left-1/2 top-[9px] h-px w-[11px] -translate-x-1/2 bg-[#B88A3B]/70" />
+            <span className="absolute left-1/2 top-[5px] h-[21px] w-[2px] -translate-x-1/2 rounded-full bg-[#B88A3B]/80" />
+            <span className="absolute left-1/2 top-[12px] h-[2px] w-[16px] -translate-x-1/2 rounded-full bg-[#B88A3B]/80" />
           </span>
           {content.siteName}
         </Link>
