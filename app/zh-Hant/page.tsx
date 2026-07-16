@@ -103,6 +103,14 @@ export default function HomePage() {
               {siteContentZhHant.about.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
+              <div className="rounded-md border-l-2 border-[#B88A3B] bg-[#EAF2F8]/55 px-5 py-4">
+                <p className="text-sm font-semibold tracking-[0.14em] text-[#B88A3B]">
+                  {siteContentZhHant.about.coreValueTitle}
+                </p>
+                <p className="mt-2 leading-8 text-[#0B2340]/76">
+                  {siteContentZhHant.about.coreValue}
+                </p>
+              </div>
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 {["聚會資訊", "會後交流", "資源整理"].map((item) => (
                   <div
@@ -141,6 +149,34 @@ export default function HomePage() {
                     </p>
                   </article>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-20">
+          <div className="container">
+            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+              <div>
+                <div className="gold-line mb-5" />
+                <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
+                  {siteContentZhHant.mission.prayerTitle}
+                </h2>
+                <p className="mt-5 leading-8 text-[#0B2340]/68">
+                  {siteContentZhHant.mission.prayerIntro}
+                </p>
+              </div>
+              <div className="soft-card p-6 md:p-8">
+                <ul className="space-y-4">
+                  {siteContentZhHant.mission.prayerItems.map((item) => (
+                    <li className="flex gap-4 text-[#0B2340]/72" key={item}>
+                      <span className="mt-1 text-[#B88A3B]" aria-hidden="true">
+                        ✦
+                      </span>
+                      <span className="leading-8">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -186,9 +222,15 @@ export default function HomePage() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[#0B2340]/52">會議號碼</dt>
+                      <dt className="text-[#0B2340]/52">參與情況</dt>
                       <dd className="mt-1 font-semibold text-[#0B2340]">
-                        {displayEventFieldZhHant(event.meetingNumber)}
+                        {displayEventFieldZhHant(event.participantCount)}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[#0B2340]/52">下次聚會</dt>
+                      <dd className="mt-1 font-semibold text-[#0B2340]">
+                        {displayEventFieldZhHant(event.nextGathering)}
                       </dd>
                     </div>
                   </dl>

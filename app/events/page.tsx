@@ -47,6 +47,11 @@ export default function EventsPage() {
                     <p className="mt-5 max-w-3xl leading-8 text-[#0B2340]/68">
                       {event.introduction}
                     </p>
+                    {event.review.trim() ? (
+                      <p className="mt-4 max-w-3xl leading-8 text-[#0B2340]/68">
+                        {event.participantCount}。会后同工们期待继续聚集、彼此守望与同行。
+                      </p>
+                    ) : null}
                   </div>
                   <dl className="min-w-56 space-y-3 text-sm">
                     <div>
@@ -56,9 +61,15 @@ export default function EventsPage() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[#0B2340]/52">会议号码</dt>
+                      <dt className="text-[#0B2340]/52">主讲人</dt>
                       <dd className="font-semibold text-[#0B2340]">
-                        {displayEventField(event.meetingNumber)}
+                        {displayEventField(event.speaker)}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[#0B2340]/52">下次聚会</dt>
+                      <dd className="font-semibold text-[#0B2340]">
+                        {displayEventField(event.nextGathering)}
                       </dd>
                     </div>
                     <Link className="button button-primary mt-5 w-full" href={`/events/${event.slug}`}>

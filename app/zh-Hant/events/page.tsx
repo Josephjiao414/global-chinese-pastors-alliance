@@ -50,6 +50,11 @@ export default function EventsPage() {
                     <p className="mt-5 max-w-3xl leading-8 text-[#0B2340]/68">
                       {event.introduction}
                     </p>
+                    {event.review.trim() ? (
+                      <p className="mt-4 max-w-3xl leading-8 text-[#0B2340]/68">
+                        {event.participantCount}。會後同工們期待繼續聚集、彼此守望與同行。
+                      </p>
+                    ) : null}
                   </div>
                   <dl className="min-w-56 space-y-3 text-sm">
                     <div>
@@ -59,9 +64,15 @@ export default function EventsPage() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[#0B2340]/52">會議號碼</dt>
+                      <dt className="text-[#0B2340]/52">主講人</dt>
                       <dd className="font-semibold text-[#0B2340]">
-                        {displayEventFieldZhHant(event.meetingNumber)}
+                        {displayEventFieldZhHant(event.speaker)}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[#0B2340]/52">下次聚會</dt>
+                      <dd className="font-semibold text-[#0B2340]">
+                        {displayEventFieldZhHant(event.nextGathering)}
                       </dd>
                     </div>
                     <Link className="button button-primary mt-5 w-full" href={`/zh-Hant/events/${event.slug}`}>

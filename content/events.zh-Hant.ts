@@ -7,8 +7,16 @@ export type AllianceEvent = {
   date: string;
   startTime: string;
   timezone: string;
+  host: string;
   speaker: string;
+  speakerBio: string;
+  guests: string[];
+  participantCount: string;
   introduction: string;
+  review: string;
+  reviewImage: string;
+  reviewImageAlt: string;
+  nextGathering: string;
   poster: string;
   platform: string;
   meetingNumber: string;
@@ -31,15 +39,25 @@ export const eventsZhHant: AllianceEvent[] = [
     date: "7月15日",
     startTime: "晚8點",
     timezone: "北京／新加坡時間",
-    speaker: "",
+    host: "路德姊妹",
+    speaker: "約拿牧師",
+    speakerBio:
+      "約拿牧師牧會經驗超過15年，曾創辦多間國際宣教教會，並在多個國家為主作見證。",
+    guests: ["大衛牧師", "多加牧師", "安德烈牧師"],
+    participantCount: "39位牧會者及教會同工參與",
     introduction:
       "本次聚會聚焦當代教會所面對的真實挑戰，邀請全球華人牧者、傳道人和教會同工一同思想教會如何在真理中站立，在禱告中更新，並在彼此連結中重新得力。",
+    review:
+      "此次集會共有39位牧會者及教會同工參與。聚會盼望幫助兄弟教會經歷復興，協助牧會者裝備真理，透過真理養育教會信徒，更好地管理神的教會。會中由路德姊妹主持，約拿牧師主講，大衛牧師、多加牧師、安德烈牧師參與分享。會後同工們表達了繼續聚集、彼此守望與同行的期待。",
+    reviewImage: "/images/gathering-2026-07-15.jpg",
+    reviewImageAlt: "7月15日牧會者見面會線上聚集畫面",
+    nextGathering: "待定",
     poster: "/images/poster.png",
-    platform: "",
+    platform: "線上聚會",
     meetingNumber: "",
     meetingPassword: "",
     registrationUrl: "",
-    status: "upcoming",
+    status: "ended",
   },
 ];
 
@@ -52,5 +70,5 @@ export function getEventBySlugZhHant(slug: string) {
 }
 
 export function displayEventFieldZhHant(value: string) {
-  return value.trim() ? value : "確認後公布";
+  return value.trim() ? value : "稍後公布";
 }

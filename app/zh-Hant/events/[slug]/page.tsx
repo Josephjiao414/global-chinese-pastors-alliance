@@ -57,10 +57,13 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
     ["活動日期", event.date],
     ["開始時間", event.startTime],
     ["時區", event.timezone],
+    ["主持人", displayEventFieldZhHant(event.host)],
     ["主講人", displayEventFieldZhHant(event.speaker)],
+    ["參與情況", displayEventFieldZhHant(event.participantCount)],
     ["會議平台", displayEventFieldZhHant(event.platform)],
     ["會議號碼", displayEventFieldZhHant(event.meetingNumber)],
     ["會議密碼", displayEventFieldZhHant(event.meetingPassword)],
+    ["下次聚會", displayEventFieldZhHant(event.nextGathering)],
   ];
 
   return (
@@ -125,6 +128,50 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                   </div>
                 ))}
               </dl>
+              {event.guests.length > 0 ? (
+                <div className="mt-8 border-t border-[#12345A]/10 pt-6">
+                  <h3 className="serif-title text-2xl font-semibold text-[#0B2340]">
+                    分享嘉賓
+                  </h3>
+                  <p className="mt-3 leading-8 text-[#0B2340]/70">
+                    {event.guests.join("、")}
+                  </p>
+                </div>
+              ) : null}
+              {event.speakerBio.trim() ? (
+                <div className="mt-8 border-t border-[#12345A]/10 pt-6">
+                  <h3 className="serif-title text-2xl font-semibold text-[#0B2340]">
+                    主講人簡介
+                  </h3>
+                  <p className="mt-3 leading-8 text-[#0B2340]/70">
+                    {event.speakerBio}
+                  </p>
+                </div>
+              ) : null}
+              {event.review.trim() ? (
+                <div className="mt-8 border-t border-[#12345A]/10 pt-6">
+                  <h3 className="serif-title text-2xl font-semibold text-[#0B2340]">
+                    本次集會回顧
+                  </h3>
+                  <p className="mt-3 leading-8 text-[#0B2340]/70">
+                    {event.review}
+                  </p>
+                  {event.reviewImage.trim() ? (
+                    <figure className="mt-6 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#FAFBFC]">
+                      <Image
+                        alt={event.reviewImageAlt}
+                        className="h-auto w-full"
+                        height={720}
+                        src={event.reviewImage}
+                        width={1280}
+                      />
+                      <figcaption className="px-4 py-3 text-sm text-[#0B2340]/58">
+                        {event.reviewImageAlt}
+                      </figcaption>
+                    </figure>
+                  ) : null}
+                </div>
+              ) : null}
               {event.registrationUrl.trim() ? (
                 <a
                   className="button button-primary mt-8"
@@ -136,7 +183,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                 </a>
               ) : (
                 <p className="mt-8 text-sm leading-7 text-[#0B2340]/64">
-                  報名或參會方式確認後會在本頁更新。你也可以透過「聯絡我們」留下資訊，方便後續通知。
+                  下次聚會時間與報名方式確認後會在本頁更新。你也可以透過「聯絡我們」留下資訊，方便後續通知。
                 </p>
               )}
             </div>
