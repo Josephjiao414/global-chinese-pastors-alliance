@@ -30,6 +30,13 @@ a {
   text-decoration: none;
 }
 
+img,
+[data-protected-media] {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 .serif-title {
   font-family: "Songti SC", "STSong", "SimSun", serif;
 }

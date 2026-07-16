@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -69,7 +70,24 @@ export default function RootLayout({
 }>) {
   return (
     <html data-scroll-behavior="smooth" lang="zh" suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script id="protect-public-images" strategy="afterInteractive">
+          {`
+            document.addEventListener("contextmenu", function (event) {
+              if (event.target && event.target.closest && event.target.closest("img, [data-protected-media]")) {
+                event.preventDefault();
+              }
+            });
+
+            document.addEventListener("dragstart", function (event) {
+              if (event.target && event.target.closest && event.target.closest("img, [data-protected-media]")) {
+                event.preventDefault();
+              }
+            });
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

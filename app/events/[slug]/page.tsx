@@ -154,10 +154,14 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                     {event.review}
                   </p>
                   {event.reviewImage.trim() ? (
-                    <figure className="mt-6 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#FAFBFC]">
+                    <figure
+                      className="mt-6 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#FAFBFC]"
+                      data-protected-media
+                    >
                       <Image
                         alt={event.reviewImageAlt}
-                        className="h-auto w-full"
+                        className="h-auto w-full select-none"
+                        draggable={false}
                         height={720}
                         src={event.reviewImage}
                         width={1280}
