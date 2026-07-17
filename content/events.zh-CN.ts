@@ -16,6 +16,9 @@ export type AllianceEvent = {
   review: string;
   reviewImage: string;
   reviewImageAlt: string;
+  videoTitle: string;
+  videoUrl: string;
+  videoEmbedUrl: string;
   nextGathering: string;
   poster: string;
   platform: string;
@@ -51,6 +54,9 @@ export const eventsZhCN: AllianceEvent[] = [
       "此次集会共有39位牧会者及教会同工参与。聚会盼望帮助兄弟教会经历复兴，协助牧会者装备真理，通过真理养育教会信徒，更好地管理神的教会。会中由路德姊妹主持，约拿牧师主讲，大卫牧师、多加牧师、安德烈牧师参与分享。会后同工们表达了继续聚集、彼此守望与同行的期待。",
     reviewImage: "/images/gathering-2026-07-15.jpg",
     reviewImageAlt: "7月15日牧会者见面会线上聚集画面",
+    videoTitle: "《如何复兴教会》活动录制",
+    videoUrl: "https://www.youtube.com/watch?v=cQEE8ysg2l0",
+    videoEmbedUrl: "https://www.youtube.com/embed/cQEE8ysg2l0",
     nextGathering: "待定",
     poster: "/images/poster.png",
     platform: "线上聚会",

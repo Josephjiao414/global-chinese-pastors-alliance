@@ -16,6 +16,9 @@ export type AllianceEvent = {
   review: string;
   reviewImage: string;
   reviewImageAlt: string;
+  videoTitle: string;
+  videoUrl: string;
+  videoEmbedUrl: string;
   nextGathering: string;
   poster: string;
   platform: string;
@@ -51,6 +54,9 @@ export const eventsZhHant: AllianceEvent[] = [
       "此次集會共有39位牧會者及教會同工參與。聚會盼望幫助兄弟教會經歷復興，協助牧會者裝備真理，透過真理養育教會信徒，更好地管理神的教會。會中由路德姊妹主持，約拿牧師主講，大衛牧師、多加牧師、安德烈牧師參與分享。會後同工們表達了繼續聚集、彼此守望與同行的期待。",
     reviewImage: "/images/gathering-2026-07-15.jpg",
     reviewImageAlt: "7月15日牧會者見面會線上聚集畫面",
+    videoTitle: "《如何復興教會》活動錄製",
+    videoUrl: "https://www.youtube.com/watch?v=cQEE8ysg2l0",
+    videoEmbedUrl: "https://www.youtube.com/embed/cQEE8ysg2l0",
     nextGathering: "待定",
     poster: "/images/poster.png",
     platform: "線上聚會",

@@ -192,6 +192,24 @@ export default function HomePage() {
                   <p className="mt-5 max-w-2xl leading-8 text-[#0B2340]/68">
                     {event.introduction}
                   </p>
+                  {event.videoEmbedUrl.trim() ? (
+                    <div className="mt-7">
+                      <h4 className="serif-title text-2xl font-semibold text-[#0B2340]">
+                        {event.videoTitle}
+                      </h4>
+                      <div className="mt-4 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#0B2340]">
+                        <iframe
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="aspect-video w-full"
+                          loading="lazy"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          src={event.videoEmbedUrl}
+                          title={event.videoTitle}
+                        />
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
                 <div className="min-w-64 border-t border-[#12345A]/12 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
                   <dl className="space-y-4 text-sm">

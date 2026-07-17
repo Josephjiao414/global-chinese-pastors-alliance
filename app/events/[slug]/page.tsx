@@ -173,6 +173,35 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                   ) : null}
                 </div>
               ) : null}
+              {event.videoEmbedUrl.trim() ? (
+                <div className="mt-8 border-t border-[#12345A]/10 pt-6">
+                  <h3 className="serif-title text-2xl font-semibold text-[#0B2340]">
+                    活动录制视频
+                  </h3>
+                  <p className="mt-3 leading-8 text-[#0B2340]/70">
+                    {event.videoTitle}
+                  </p>
+                  <div className="mt-5 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#0B2340]">
+                    <iframe
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="aspect-video w-full"
+                      loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      src={event.videoEmbedUrl}
+                      title={event.videoTitle}
+                    />
+                  </div>
+                  <a
+                    className="mt-4 inline-flex text-sm font-semibold text-[#B88A3B]"
+                    href={event.videoUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    在 YouTube 打开
+                  </a>
+                </div>
+              ) : null}
               {event.registrationUrl.trim() ? (
                 <a
                   className="button button-primary mt-8"
