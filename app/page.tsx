@@ -244,6 +244,31 @@ export default function HomePage() {
                   >
                     {siteContentZhCN.events.action}
                   </Link>
+                  <div className="mt-7 rounded-md border border-[#12345A]/10 bg-[#FAFBFC]/80 p-4 text-center">
+                    <div className="mx-auto max-w-[180px] rounded-md border border-[#12345A]/10 bg-white p-2">
+                      <Image
+                        alt="会后交流登记表二维码"
+                        className="h-auto w-full"
+                        height={320}
+                        src="/qr-contact.svg"
+                        width={320}
+                      />
+                    </div>
+                    <p className="mt-4 font-semibold text-[#0B2340]">
+                      看完视频，扫码交流
+                    </p>
+                    <p className="mt-2 text-xs leading-5 text-[#0B2340]/58">
+                      可留下联系方式、交流回应或后续聚会意向。
+                    </p>
+                    <a
+                      className="mt-4 inline-flex text-sm font-semibold text-[#B88A3B]"
+                      href={siteContentZhCN.afterGathering.formUrl}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      打开交流表
+                    </a>
+                  </div>
                 </div>
               </article>
             ) : (
