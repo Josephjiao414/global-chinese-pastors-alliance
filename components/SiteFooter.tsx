@@ -11,13 +11,13 @@ type SiteFooterProps = {
 
 export function SiteFooter({ content = siteContentZhCN }: SiteFooterProps) {
   return (
-    <footer className="bg-[#0B2340] py-10 text-[#F6F9FC]">
+    <footer className="bg-[#0B2340] py-10 text-white">
       <div className="container">
         <p className="serif-title text-xl">{content.siteName}</p>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-[#F6F9FC]/72">
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-white/72">
           {content.footer.tagline}
         </p>
-        <p className="mt-8 text-xs text-[#F6F9FC]/48">
+        <p className="mt-8 text-xs text-white/48">
           © {new Date().getFullYear()} {content.siteName}
         </p>
       </div>

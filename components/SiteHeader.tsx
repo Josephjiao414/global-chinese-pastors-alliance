@@ -25,7 +25,7 @@ export function SiteHeader({
   const homeHref = isTraditional ? "/zh-Hant" : "/";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[rgba(18,52,90,0.09)] bg-[#F7FAFC]/88 backdrop-blur-md">
+    <header className="border-b border-[rgba(18,52,90,0.1)] bg-[#FAFBFC]/92 backdrop-blur">
       <div className="container flex min-h-16 flex-wrap items-center justify-between gap-x-6 gap-y-3 py-3">
         <Link
           className="serif-title inline-flex items-center gap-3 text-lg font-semibold text-[#12345A]"
@@ -33,7 +33,7 @@ export function SiteHeader({
         >
           <span
             aria-hidden="true"
-            className="relative inline-block h-8 w-8 rounded-full border border-[#B88A3B]/50 bg-[#FBFCFD]/72 shadow-[0_0_22px_rgba(184,138,59,0.16)]"
+            className="relative inline-block h-8 w-8 rounded-full border border-[#B88A3B]/50 bg-white/55 shadow-[0_0_22px_rgba(184,138,59,0.16)]"
           >
             <span className="absolute left-1/2 top-[5px] h-[21px] w-[2px] -translate-x-1/2 rounded-full bg-[#B88A3B]/80" />
             <span className="absolute left-1/2 top-[12px] h-[2px] w-[16px] -translate-x-1/2 rounded-full bg-[#B88A3B]/80" />

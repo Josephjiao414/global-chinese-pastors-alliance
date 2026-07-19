@@ -184,7 +184,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                   <p className="mt-3 leading-8 text-[#0B2340]/70">
                     {event.videoTitle}
                   </p>
-                  <div className="video-frame mt-5 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#0B2340]">
+                  <div className="mt-5 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#0B2340]">
                     <iframe
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
