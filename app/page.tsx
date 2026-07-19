@@ -22,7 +22,7 @@ export default function HomePage() {
     <>
       <SiteHeader languageLinks={{ simplified: "/", traditional: "/zh-Hant" }} />
       <main>
-        <section className="relative overflow-hidden py-20 md:py-28">
+        <section className="hero-field relative overflow-hidden py-20 md:py-28">
           <div className="absolute inset-x-0 bottom-0 h-[380px] bg-[radial-gradient(circle_at_center,rgba(216,188,130,0.22),transparent_24%),linear-gradient(to_top,rgba(234,242,248,0.96),rgba(234,242,248,0.34)_58%,transparent)]" />
           <div className="absolute bottom-0 left-1/2 h-72 w-[980px] -translate-x-1/2 rounded-t-[100%] border border-[#12345A]/14" />
           <div className="absolute bottom-8 left-1/2 h-48 w-[840px] -translate-x-1/2 rounded-t-[100%] border-t border-[#12345A]/10" />
@@ -53,7 +53,7 @@ export default function HomePage() {
             <p className="mb-6 text-sm font-semibold tracking-[0.18em] text-[#B88A3B]">
               {siteContentZhCN.hero.name}
             </p>
-            <h1 className="serif-title mx-auto max-w-5xl text-5xl font-semibold leading-tight text-[#0B2340] md:text-6xl">
+            <h1 className="serif-title mx-auto max-w-5xl text-5xl font-semibold leading-[1.06] text-[#0B2340] md:text-7xl md:leading-[0.98]">
               <span className="block">面对时代挑战，</span>
               <span className="mt-2 block">教会如何复兴</span>
             </h1>
@@ -168,8 +168,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-[#EAF2F8] py-20">
-          <div className="container">
+        <section className="event-showcase bg-[#EAF2F8] py-20">
+          <div className="container relative">
             <div className="max-w-3xl">
               <div className="gold-line mb-5" />
               <h2 className="serif-title text-4xl font-semibold text-[#12345A]">
@@ -180,7 +180,7 @@ export default function HomePage() {
               </p>
             </div>
             {event ? (
-              <article className="soft-card mt-10 grid gap-8 p-6 md:grid-cols-[1fr_auto] md:p-8">
+              <article className="soft-card mt-10 grid gap-8 overflow-hidden p-6 md:grid-cols-[minmax(0,1fr)_320px] md:p-8">
                 <div>
                   <span className="text-sm font-semibold text-[#B88A3B]">
                     {eventStatusLabels[event.status]}
@@ -197,7 +197,7 @@ export default function HomePage() {
                       <h4 className="serif-title text-2xl font-semibold text-[#0B2340]">
                         {event.videoTitle}
                       </h4>
-                      <div className="mt-4 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#0B2340]">
+                      <div className="video-frame mt-4 overflow-hidden rounded-md border border-[#12345A]/10 bg-[#0B2340]">
                         <iframe
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
@@ -211,7 +211,7 @@ export default function HomePage() {
                     </div>
                   ) : null}
                 </div>
-                <div className="min-w-64 border-t border-[#12345A]/12 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+                <div className="border-t border-[#12345A]/12 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
                   <dl className="space-y-4 text-sm">
                     <div>
                       <dt className="text-[#0B2340]/52">时间</dt>
@@ -244,8 +244,8 @@ export default function HomePage() {
                   >
                     {siteContentZhCN.events.action}
                   </Link>
-                  <div className="mt-7 rounded-md border border-[#12345A]/10 bg-[#FAFBFC]/80 p-4 text-center">
-                    <div className="mx-auto max-w-[180px] rounded-md border border-[#12345A]/10 bg-white p-2">
+                  <div className="mt-7 rounded-md border border-[#D8BC82]/30 bg-[#0B2340] p-4 text-center text-[#F6F9FC] shadow-[0_20px_50px_rgba(11,35,64,0.16)]">
+                    <div className="mx-auto max-w-[180px] rounded-md border border-[#D8BC82]/25 bg-[#F7FAFC] p-2">
                       <Image
                         alt="会后交流登记表二维码"
                         className="h-auto w-full"
@@ -254,14 +254,14 @@ export default function HomePage() {
                         width={320}
                       />
                     </div>
-                    <p className="mt-4 font-semibold text-[#0B2340]">
+                    <p className="mt-4 font-semibold text-[#F6F9FC]">
                       看完视频，扫码交流
                     </p>
-                    <p className="mt-2 text-xs leading-5 text-[#0B2340]/58">
+                    <p className="mt-2 text-xs leading-5 text-[#F6F9FC]/68">
                       可留下联系方式、交流回应或后续聚会意向。
                     </p>
                     <a
-                      className="mt-4 inline-flex text-sm font-semibold text-[#B88A3B]"
+                      className="mt-4 inline-flex text-sm font-semibold text-[#D8BC82]"
                       href={siteContentZhCN.afterGathering.formUrl}
                       rel="noreferrer"
                       target="_blank"
